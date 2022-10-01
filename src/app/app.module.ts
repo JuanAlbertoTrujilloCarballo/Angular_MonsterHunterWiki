@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
