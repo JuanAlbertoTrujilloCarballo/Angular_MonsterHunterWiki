@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Entree } from 'src/app/shared/interfaces/entree';
+import { EntreeService } from 'src/app/shared/services/entree.service';
 
 
 @Component({
@@ -9,27 +9,31 @@ import { Entree } from 'src/app/shared/interfaces/entree';
 })
 export class ListComponent implements OnInit {
 
-  public entryList: Entree[];
+  public entryList: any;
 
-  constructor() {
-    this.entryList = [
-      {
-        title: 'Introducción a Angular',
-        abstract: 'En esta lección realizaremos una pequeña introducción al mundo de desarrollo con Angular'
-      },
-      {
-        title: 'Typescript como lenguaje para Angular',
-        abstract: 'Breve recorrido por el lenguaje de Typescript como base para desarrollar en Angular'
-       },
-      {
-        title: 'Componentes en Angular',
-        abstract: 'Aprenderemos a usar los componentes en Angular y el porqué de su importancia'
-       }
-    ];
+
+  constructor(private entreeService: EntreeService) {
+
   }
 
   ngOnInit(): void {
+    this.retrieveEntry();
   }
+
+  private retrieveEntry(): void {
+    this.entreeService.retrieveEntry().subscribe(
+      (data) => {
+        this.entryList = data;
+      },
+      (error: Error) => {
+        console.log('Error: ', error);
+      },
+      () => {
+        console.log('Petición realizada correctamente');
+      }
+    );
+  }
+
 
   public showTitle(title: string): void {
     alert(`Entrada seleccionada: ${title}.`);
