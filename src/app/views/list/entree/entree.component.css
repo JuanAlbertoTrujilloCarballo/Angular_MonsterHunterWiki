@@ -1,0 +1,8 @@
+#entree {
+  background-color: aqua;
+  border-radius: 15px;
+}
+
+#entree * {
+  padding: 20px;
+}
