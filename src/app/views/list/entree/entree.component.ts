@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Entree } from 'src/app/shared/interfaces/entree';
 
 @Component({
   selector: 'app-entree',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntreeComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public entree: Entree;
 
-  ngOnInit(): void {
+  constructor() {
+      this.entree = {
+      title: '',
+      abstract: ''
+    }
   }
 
-}
+    ngOnInit(): void {
+    }
+
+  }
