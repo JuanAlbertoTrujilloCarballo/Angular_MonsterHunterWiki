@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './views/login/login.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule} from '@angular/common/http';
     ListComponent,
     EntreeComponent,
     PageNotFoundComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
