@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/classes/user';
-import { LoginService } from 'src/app/shared/services/login.service';
+import { LoginService } from 'src/app/shared/services/login.service'
 
 @Component({
   selector: 'app-login',
@@ -17,9 +17,8 @@ export class LoginComponent implements OnInit {
     private router: Router) {
     this.user = new User();
   }
-
-
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   public submit(): void {
     this.loginService.login(this.user).subscribe(
@@ -27,10 +26,12 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userName', this.user.name);
         localStorage.setItem('personalToken', `${data}`);
         this.router.navigate(['/list']);
-      },
-      (error: Error) => {
+      }, (error: Error) => {
         console.error("Error al realizar el acceso- login");
       }
     )
   }
 }
+      
+
+  

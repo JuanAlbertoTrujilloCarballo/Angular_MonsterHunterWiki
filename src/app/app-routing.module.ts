@@ -11,7 +11,7 @@ const routes: Routes = [{ path: 'list', component: ListComponent },
 { path: 'us', component: AboutUsComponent },
 { path: '', redirectTo: '/list', pathMatch: 'full' },
 { path: '**', component: PageNotFoundComponent },
-{ path: 'login', component: LoginComponent}
+// { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
